@@ -13,7 +13,7 @@ jobs:
 
       - name: Update Approval
         run: |
-          TOKEN=${{ secrets.FE-reviews-PAT }}
+          TOKEN=${{ secrets.FE_reviews_PAT }}
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           LABEL_NAME="frontend"
           MIN_APPROVALS=1

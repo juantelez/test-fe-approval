@@ -4,7 +4,8 @@ on:
   pull_request:
     types: opened
     paths:
-      - '**.py'
+      - '**.html'
+      - '**.css'
       - '**.js'
 
 jobs:
