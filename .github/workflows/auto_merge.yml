@@ -1,0 +1,19 @@
+name: Auto Merge
+
+on:
+  pull_request:
+    types:
+      - closed
+    branchs:
+      = frontend
+
+jobs:
+  auto_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Merge branch A into branch B
+        run: git checkout main && git merge --ff-only frontend --no-edit && git push
