@@ -19,7 +19,7 @@ jobs:
         run: |
           git fetch
           git checkout main
-          #git config --global user.email "github@action.com"
-          #git config --global user.name "GHA"
+          git config --global user.email "github@action.com"
+          git config --global user.name "GHA"
           git merge --allow-unrelated-histories --no-ff frontend --no-edit
           git push
