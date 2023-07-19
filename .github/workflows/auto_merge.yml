@@ -2,8 +2,8 @@ name: Auto Merge
 
 on:
   pull_request:
-      types:
-        - closed
+    types:
+      - closed
     branchs:
       - frontend
 
