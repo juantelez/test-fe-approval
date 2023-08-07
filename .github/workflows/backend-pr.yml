@@ -14,7 +14,7 @@ on:
       - dismissed
 jobs:
   require-reviewers:
-    if: ${{ contains(github.event.pull_request.labels.*.name, 'backend')
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'backend') }}
     runs-on: ubuntu-latest
     steps:
       - name: Require-reviewers
