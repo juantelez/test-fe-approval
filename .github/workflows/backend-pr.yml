@@ -1,0 +1,26 @@
+name: backend PR
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - labeled
+      - unlabeled
+  pull_request_review:
+    types:
+      - submitted
+      - edited
+      - dismissed
+jobs:
+  require-reviewers:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'backend') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require-reviewers
+        uses: travelperk/label-requires-reviews-action@1.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          rules_yaml: |
+            backend: 2
